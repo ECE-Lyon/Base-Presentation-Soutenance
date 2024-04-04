@@ -1,0 +1,329 @@
+/* @theme ece */
+
+@import 'default';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://unpkg.com/tailwindcss@^2/dist/utilities.min.css');
+
+:root {
+  --marges-horizontales: 40px;
+  --marges-verticales: 30px;
+  --couleur-fond-ece: #007179;
+  --couleur-vert-ece: #005c64;
+  --couleur-texte: #33453f;
+  --couleur-titre: #335353;
+}
+
+:root {
+  font-size: 1.7rem;
+}
+
+:root.small table {
+  font-size: 0.8em;
+}
+
+strong {
+  color: var(--couleur-vert-ece);
+  font-weight: bold;
+}
+
+h1, h2, h3, h4, h6 {
+  margin: 0;
+  margin-bottom: 0.2em;
+}
+
+h1 {
+  color: var(--couleur-titre);
+  font-size: 2em;
+}
+
+h1 strong {
+  background-color: var(--couleur-titre);
+  color: #ffffff;
+  border-radius: 0.2em;
+  border: none;
+  padding: 0.2em 0.3em 0.1em;
+  font-size: 0.8em;
+  letter-spacing: 0.025em;
+  font-family: Helvetica;
+  font-weight: normal;
+}
+
+h2 strong, h3 strong, h4 strong, h5 strong, h6 strong {
+  color: var(--couleur-fond-ece);
+  font-weight: bolder;
+}
+
+h2 code {
+  background-color: var(--couleur-titre);
+  color: #ffffff;
+  border-radius: 0.2em;
+  border: none;
+  padding: 0.2em 0.3em 0.1em;
+  font-size: 0.8em;
+  letter-spacing: 0.025em;
+  font-family: Helvetica;
+  font-weight: normal;
+}
+
+a {
+  color: var(--couleur-fond-ece);
+}
+
+.mermaid {
+  font-size: 1em;
+}
+
+img {
+  background-color: transparent !important;
+}
+
+hr {
+  padding-top: 0.1em;
+}
+
+/********************************************************************/
+/********************************************************************/
+/***************************** SECTIONS *****************************/
+/********************************************************************/
+/********************************************************************/
+section {
+  font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+  padding: var(--marges-verticales) var(--marges-horizontales);
+  padding-bottom: calc(var(--marges-verticales) + 0.6em);
+  background-color: #f5f5f5;
+  color: var(--couleur-texte);
+  justify-content: start;
+}
+
+section::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background-image: url('images/ece_fond.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+section::after { /* pagination */
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  right: var(--marges-horizontales);
+}
+
+footer {
+  left: var(--marges-horizontales);
+}
+
+section::after,
+footer {
+  font-weight: lighter;
+  letter-spacing: 1px;
+  font-size: 0.7em;
+  color: #aaa;
+  bottom: calc(var(--marges-verticales) - 0.5em);
+}
+
+/********************************************************************/
+/********************************************************************/
+/***************************** TABLEAUX *****************************/
+/********************************************************************/
+/********************************************************************/
+table, tr, td, th {
+  all: unset;
+  border: solid 1px #bcc8c0 !important;
+  background: transparent !important;
+  font-size: 1em;
+}
+table { display: table; width: 100%; }
+tr { display: table-row; }
+td,th { display: table-cell; }
+th {
+  color: #216067;
+  font-weight: bolder;
+}
+table code {
+  background-color: transparent;
+  font-size: 1.1em;
+}
+
+/********************************************************************/
+/********************************************************************/
+/****************************** CODE ********************************/
+/********************************************************************/
+/********************************************************************/
+code { font-family: Consolas, 'Courier New', monospace; }
+pre {
+  background-color: #eee;
+  border-radius: 10px;
+  border: none;
+  padding: 20px;
+  font-size: 0.8em;
+}
+
+/********************************************************************/
+/********************************************************************/
+/**************************** TERMINAL ******************************/
+/********************************************************************/
+/********************************************************************/
+blockquote {
+  border: solid 1px #313335;
+  font-family: Consolas, 'Courier New', monospace;
+  padding: 20px;
+  padding-top: 45px;
+  background-color: #333;
+  border-radius: 10px;
+  color: #cccccc;
+  position: relative;
+  width: 80%;
+  font-size: 0.8em;
+}
+blockquote:after {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #ff4e4e;
+  position: absolute;
+  top: 18px;
+  left: 20px;
+  border-radius: 50%;
+}
+blockquote:before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #fac536;
+  position: absolute;
+  top: 18px;
+  left: 50px;
+  border-radius: 50%;
+}
+blockquote p:before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 15px;
+  background-color: #39ea49;
+  position: absolute;
+  top: 18px;
+  left: 80px;
+  border-radius: 50%;
+}
+blockquote strong {
+  color: #eef2f0;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/********************************************************************/
+/********************************************************************/
+/****************************** LISTE *******************************/
+/********************************************************************/
+/********************************************************************/
+ul {
+  list-style: none;
+  padding-left: 1.5em;
+}
+ul li::before {
+  content: "\2022";
+  color: var(--couleur-vert-ece);
+  font-weight: bold;
+  display: inline-block;
+  width: 0.8em;
+  margin-left: -1em;
+}
+
+/********************************************************************/
+/********************************************************************/
+/************************** PREMIERE SLIDE **************************/
+/********************************************************************/
+/********************************************************************/
+section.lead {
+  background-color: #005c64;
+  color: #ffffff; 
+  padding: var(--marges-horizontales) 35px var(--marges-horizontales);
+  justify-content: space-between;
+  font-size: 1.4rem;
+}
+section.lead strong {
+  background-color: var(--couleur-fond-ece);
+  padding: 6px 10px;
+  border-radius: 10px;
+  color: #ffffff;
+  margin-right: 15px;
+}
+section.lead h1 {
+  font-size: 3em;
+  color: #ffffff;
+}
+section.lead a {
+  color: #ccc;
+}
+section.lead footer, section.lead::before, section.lead::after {
+  display: none;
+}
+
+/********************************************************************/
+/********************************************************************/
+/*************************** SLIDE TITRE ****************************/
+/********************************************************************/
+/********************************************************************/
+
+section.titre {
+  background-color: var(--couleur-vert-ece);
+  justify-content: center;
+  text-align: center;
+  color: #ffffff;
+}
+section.titre footer, section.titre::after {
+  display: none;
+}
+section.titre h1, section.titre h2 {
+  color: #ffffff;
+  font-size: 3em;
+  letter-spacing: 0.05em;
+}
+
+/********************************************************************/
+/********************************************************************/
+/****************************** EQUIPE ******************************/
+/********************************************************************/
+/********************************************************************/
+
+section.team ul  {
+  width: 92%;
+  text-align: center;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  padding: 0;
+  padding: 0 4%;
+  margin: 0;
+}
+section.team ul li {
+  padding: 50px;
+  margin: 0;
+}
+section.team ul li:first-child {
+  padding-left: 0;
+}
+section.team ul li:last-child {
+  padding-right: 0;
+}
+section.team ul li::before {
+  display: none;
+}
+section.team ul li img {
+  max-height: 300px;
+  display: block;
+}
+
+.mermaid {
+  font-size: 0.6em !important;
+}
