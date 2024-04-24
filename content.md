@@ -65,7 +65,7 @@ Ce texte est en :fr: **français**, et peut comporter des *emojis* :blush: que v
 Comme vous pouvez le voir ici, une image (`![]()`) de fond (`bg`) ce trouve à droite (`right`), elle occupe `50%` de `30%` de la slide.
 
 <sup>Texte en petit (correspond à l'**exposant**).</sup>
-<sup>Texte en petit (correspond à l'**indice**).</sup>
+<sub>Texte en petit (correspond à l'**indice**).</sub>
 
 ---
 
